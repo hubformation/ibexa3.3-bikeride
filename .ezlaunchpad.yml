@@ -1,0 +1,7 @@
+last_update_check: 1628875445
+provisioning:
+    folder_name: provisioning
+docker:
+    compose_filename: docker-compose.yml
+    network_name: benoitdubucsite2
+    network_prefix_port: 43
