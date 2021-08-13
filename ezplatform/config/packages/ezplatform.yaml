@@ -86,6 +86,12 @@ ezplatform:
                 varnish_invalidate_token: '%varnish_invalidate_token%'
 
         site:
+            content_view:
+                full:
+                    home_page:
+                        template: themes/standard/full/home_page.html.twig
+                        match:
+                            Id\Location: 2
             languages: [eng-GB]
 
     url_alias:

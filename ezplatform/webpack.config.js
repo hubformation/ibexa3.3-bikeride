@@ -28,6 +28,17 @@ Encore
         config.corejs = 3;
     })
 ;
+Encore
+  .addStyleEntry('tutorial', [
+    path.resolve(__dirname, './assets/css/normalize.css'),
+    path.resolve(__dirname, './assets/css/bootstrap.min.css'),
+    path.resolve(__dirname, './assets/css/bootstrap-theme.css'),
+    path.resolve(__dirname, './assets/css/style.css')
+  ])
+  .addEntry('tutorial-js', [
+    path.resolve(__dirname, './assets/js/bootstrap.min.js')
+  ]);
+
 
 // Welcome page stylesheets
 Encore.addEntry('welcome_page', [
