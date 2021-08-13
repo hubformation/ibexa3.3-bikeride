@@ -92,6 +92,10 @@ ezplatform:
                         template: themes/standard/full/home_page.html.twig
                         match:
                             Id\Location: 2
+                    ride:
+                        template: themes/standard/full/ride.html.twig
+                        match:
+                            Identifier\ContentType: ride
             languages: [eng-GB]
 
     url_alias:
