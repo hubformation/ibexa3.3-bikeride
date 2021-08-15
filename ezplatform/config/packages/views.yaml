@@ -1,6 +1,11 @@
 ezplatform:
   system:
     site:
+      # existing content_view keys
+      user_registration:
+        templates:
+          form: themes/standard/user/registration_form.html.twig
+          confirmation: themes/standard/user/registration_confirmation.html.twig
       content_view:
         line:
           ride:
