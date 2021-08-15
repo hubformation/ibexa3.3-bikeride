@@ -6,6 +6,10 @@ ContentTypeIdentifier:
                 description: 'No description available'
             folder:
                 description: 'No description available'
+            landmark:
+                description: 'No description available'
+            ride:
+                description: 'No description available'
             user:
                 description: 'No description available'
             user_group:

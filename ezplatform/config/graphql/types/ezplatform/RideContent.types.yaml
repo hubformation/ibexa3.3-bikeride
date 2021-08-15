@@ -1,0 +1,30 @@
+RideContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            photo:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainImageAssetFieldValue", [resolver("DomainFieldValue", [value, "photo"])])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            startingPoint:
+                type: MapLocationFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "starting_point"])'
+            endingPoint:
+                type: MapLocationFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "ending_point"])'
+            length:
+                type: Int
+                resolve: '@=resolver("DomainFieldValue", [value, "length"]).value'
+            landmarks:
+                type: '[LandmarkContent]'
+                resolve: '@=resolver("DomainRelationFieldValue", [resolver("DomainFieldValue", [value, "landmarks"]), true])'

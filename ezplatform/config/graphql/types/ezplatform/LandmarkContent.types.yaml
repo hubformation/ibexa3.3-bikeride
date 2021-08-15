@@ -1,0 +1,21 @@
+LandmarkContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            photo:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainImageAssetFieldValue", [resolver("DomainFieldValue", [value, "photo"])])'
+            location:
+                type: MapLocationFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "location"])'

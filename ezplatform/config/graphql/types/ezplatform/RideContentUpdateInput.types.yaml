@@ -1,0 +1,18 @@
+RideContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+            photo:
+                type: String
+            description:
+                type: RichTextFieldInput
+            startingPoint:
+                type: MapLocationFieldInput
+            endingPoint:
+                type: MapLocationFieldInput
+            length:
+                type: Int
+            landmarks:
+                type: '[Int]'

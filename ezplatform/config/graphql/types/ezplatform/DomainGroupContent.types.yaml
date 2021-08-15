@@ -39,3 +39,35 @@ DomainGroupContent:
                     id: { type: Int, description: 'Content ID of the folder' }
                     remoteId: { type: String, description: 'Content remote ID of the folder' }
                     locationId: { type: Int, description: 'Location ID of the folder' }
+            landmarks:
+                type: LandmarkContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["landmark", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            landmark:
+                type: LandmarkContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "landmark"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the landmark' }
+                    remoteId: { type: String, description: 'Content remote ID of the landmark' }
+                    locationId: { type: Int, description: 'Location ID of the landmark' }
+            rides:
+                type: RideContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["ride", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            ride:
+                type: RideContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "ride"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the ride' }
+                    remoteId: { type: String, description: 'Content remote ID of the ride' }
+                    locationId: { type: Int, description: 'Location ID of the ride' }

@@ -1,0 +1,12 @@
+LandmarkContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String!
+            description:
+                type: RichTextFieldInput
+            photo:
+                type: String!
+            location:
+                type: MapLocationFieldInput!

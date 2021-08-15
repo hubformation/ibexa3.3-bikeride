@@ -1,0 +1,6 @@
+LandmarkContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: LandmarkContent

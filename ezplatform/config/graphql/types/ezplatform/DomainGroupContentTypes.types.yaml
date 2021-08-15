@@ -8,3 +8,9 @@ DomainGroupContentTypes:
             folder:
                 type: FolderContentType
                 resolve: '@=resolver("ContentType", [{"identifier": "folder"}])'
+            landmark:
+                type: LandmarkContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "landmark"}])'
+            ride:
+                type: RideContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "ride"}])'

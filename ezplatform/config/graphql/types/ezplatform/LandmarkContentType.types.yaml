@@ -1,0 +1,20 @@
+LandmarkContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("name")'
+            description:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("description")'
+            photo:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("photo")'
+            location:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("location")'
