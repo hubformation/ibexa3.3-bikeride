@@ -42,6 +42,20 @@
                 </div>
             </div>
         </section>
+        <section>
+            <div class="row regular-content-size">
+                <div class="col-xs-12 padding-box">
+                    <div class="col-xs-2">
+                        <h4 class="underscore">{{ 'Author'|trans }}</h4>
+                        <p class="author">{{ ez_render_field( content, 'author') }}</p>
+                    </div>
+                    <div class="col-xs-8">
+                        <h4 class="underscore">{{ 'Difficulty'|trans }}</h4>
+                        <p>{{ ez_render_field( content, 'difficulty') }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         {% if landmarksList is not empty %}
             <div class="row regular-content-size">
                 <section class="photos">
