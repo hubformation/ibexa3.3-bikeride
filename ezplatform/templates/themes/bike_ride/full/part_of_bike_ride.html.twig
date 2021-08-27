@@ -1,0 +1,16 @@
+{% block ezobjectrelationlist_field %}
+    {% if not ez_field_is_empty(content, field) %}
+        <h4 class="underscore">Point of Interests</h4>
+        {% for content_id in field.value.destinationContentIds %}
+            {% if parameters.available[content_id] %}
+                {{ render(controller(
+                    'ez_content:viewAction',
+                    {
+                        contentId: content_id,
+                        viewType: 'modal'
+                    }
+                )) }}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

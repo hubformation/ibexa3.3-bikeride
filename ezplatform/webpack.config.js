@@ -28,6 +28,20 @@ Encore
         config.corejs = 3;
     })
 ;
+// Put your config here
+Encore
+  .addStyleEntry('training', [
+    path.resolve(__dirname, './assets/css/normalize.css'),
+    path.resolve(__dirname, './assets/css/bootstrap.min.css'),
+    path.resolve(__dirname, './assets/css/bootstrap-theme.css'),
+    path.resolve(__dirname, './assets/scss/style.scss') // Our custom styling
+  ])
+  .addEntry('training-js', [
+    path.resolve(__dirname, './assets/js/bootstrap.min.js')
+  ])
+  .autoProvidejQuery();
+
+/*
 Encore
   .addStyleEntry('tutorial', [
     path.resolve(__dirname, './assets/css/normalize.css'),
@@ -38,14 +52,8 @@ Encore
   .addEntry('tutorial-js', [
     path.resolve(__dirname, './assets/js/bootstrap.min.js')
   ]);
+*/
 
-
-// Welcome page stylesheets
-Encore.addEntry('welcome_page', [
-    path.resolve(__dirname, './assets/scss/welcome-page.scss'),
-]);
-
-Encore.addEntry('app', './assets/app.js');
 
 const projectConfig = Encore.getWebpackConfig();
 module.exports = [ eZConfig, ...customConfigs, projectConfig ];

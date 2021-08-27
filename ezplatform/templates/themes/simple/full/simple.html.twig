@@ -1,0 +1,7 @@
+{% extends "@ezdesign/pagelayout.html.twig" %}
+{% block content %}
+    {{ ez_render_field(content,'name') }}<br />
+    {{ content.name }}<br />
+    {{ ez_content_name(content) }}
+    {{ dump(content) }}
+{% endblock %}

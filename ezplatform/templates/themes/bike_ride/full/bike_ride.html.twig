@@ -1,0 +1,184 @@
+{% extends "@ezdesign/pagelayout.html.twig" %}
+{%  set title = ez_content_name(content) %}
+{%  block title %}
+    {{ title }}
+{% endblock %}
+{% block content %}
+<section class="below-navbar">
+        <div class="container">
+            <div class="row regular-content-size">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <div class="col-xs-12 text-center">
+                        <!-- Title here -->
+                        <h2 class="extra-padding-left">{{ title }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="below-navbar">
+        <div class="container">
+            <div class="row regular-content-size">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <div class="col-xs-6">
+                        <strong>Starting Point</strong>
+                        <hr>
+                        <!-- Starting point here -->
+                        <div class="ezgmaplocation-field"><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script><script type="text/javascript">
+                                (function(win, doc) {
+                                    var mapView = function (mapId, latitude, longitude) {
+                                        var mapElt = doc.getElementById("maplocation-map-249"),
+                                            startPoint = new google.maps.LatLng(latitude, longitude),
+                                            zoom = 13,
+                                            draggable = true;
+
+                                        new google.maps.Marker({
+                                            map: new google.maps.Map(mapElt, {
+                                                center: startPoint,
+                                                zoom: zoom,
+                                                draggable: draggable,
+                                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                                            }),
+                                            position: startPoint
+                                        });
+                                    }
+                                    if ( win.addEventListener ) {
+                                        win.addEventListener(
+                                            'load',
+                                            function () {
+                                                mapView("maplocation-map-249", {{ ez_field_value(content, 'starting_point').latitude }},{{ ez_field_value(content, 'starting_point').longitude }});
+                                            },
+                                            false
+                                        );
+                                    } else if ( win.attachEvent ) {
+                                        win.attachEvent(
+                                            'onload',
+                                            function () {
+                                                mapView("maplocation-map-249", {{ ez_field_value(content, 'starting_point').latitude }},{{ ez_field_value(content, 'starting_point').longitude }});
+                                            }
+                                        );
+                                    }
+                                })(window, document);
+                            </script><div class="maplocation-map" id="maplocation-map-249" style="width:100%; height:330px"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <strong>End Point</strong>
+                        <hr>
+                        <!-- End point here -->
+                        <div class="ezgmaplocation-field"><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script><script type="text/javascript">
+                                (function(win, doc) {
+                                    var mapView = function (mapId, latitude, longitude) {
+                                        var mapElt = doc.getElementById("maplocation-map-250"),
+                                            startPoint = new google.maps.LatLng(latitude, longitude),
+                                            zoom = 13,
+                                            draggable = true;
+
+                                        new google.maps.Marker({
+                                            map: new google.maps.Map(mapElt, {
+                                                center: startPoint,
+                                                zoom: zoom,
+                                                draggable: draggable,
+                                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                                            }),
+                                            position: startPoint
+                                        });
+                                    }
+                                    if ( win.addEventListener ) {
+                                        win.addEventListener(
+                                            'load',
+                                            function () {
+                                                mapView("maplocation-map-250", {{ ez_field_value(content, 'ending_point').latitude }},{{ ez_field_value(content, 'ending_point').longitude }});
+                                            },
+                                            false
+                                        );
+                                    } else if ( win.attachEvent ) {
+                                        win.attachEvent(
+                                            'onload',
+                                            function () {
+                                                mapView("maplocation-map-250", {{ ez_field_value(content, 'ending_point').latitude }},{{ ez_field_value(content, 'ending_point').longitude }});
+                                            }
+                                        );
+                                    }
+                                })(window, document);
+                            </script><div class="maplocation-map" id="maplocation-map-250" style="width:100%; height:330px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="row regular-content-size">
+                <div class="col-xs-10 col-xs-offset-1 padding-box">
+
+                            <!-- Length here -->
+                     {{ dump(ez_field_value(content, 'starting_point')) }}
+
+                </div>
+
+
+                <div class="col-xs-10 col-xs-offset-1 padding-box">
+                    <div class="col-xs-2">
+                        <div class="box-ride">
+                            <!-- Length here -->
+                            <h3 class="special-number">{{ ez_field_value(content, 'length') }} Km</h3>
+                            {% if not ez_field_is_empty(content, 'difficulty') %}
+                                <p class="pre-small special-number special-number-margin"><strong>Level</strong>:
+                                    {{ ez_render_field(content, 'difficulty') }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-xs-10">
+                        <div class="col-xs-5">
+                            <!-- Author here -->
+                            <p>Created by: {{ ez_render_field(content, 'author') }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 padding-box">
+                    <div class="col-xs-10">
+                        <div class="col-xs-2 text-right">
+                            <p>Description:</p>
+                        </div>
+                        <div class="col-xs-10 text-justify">
+
+                            <!-- Photo here -->
+                            {{ ez_render_field(content, 'photo', { 'parameters': {'alias': 'bike_ride_main'} }) }}
+                            {{ ez_render_field(content, 'photo', {'attr': {
+                            width: '100%'}}) }}
+                            <!--img alt="" src="/assets/images/geneva.png" width="100%"-->
+
+                            <!-- Description here -->
+                            <div class="ezrichtext-field">
+                                {{ ez_render_field(content, 'description') }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ ez_render_field(content, 'landmarks', {template: _self } ) }}
+{%  endblock %}
+
+{% block ezobjectrelationlist_field %}
+    {% if not ez_field_is_empty(content, field) %}
+        <h4 class="underscore">Point of Interests</h4>
+        {% for content_id in field.value.destinationContentIds %}
+            {% if parameters.available[content_id] %}
+                {{ render(controller(
+                    'ez_content:viewAction',
+                    {
+                        contentId: content_id,
+                        viewType: 'modal'
+                    }
+                )) }}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

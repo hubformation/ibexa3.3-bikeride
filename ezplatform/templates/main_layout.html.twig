@@ -9,9 +9,7 @@
 
     <title>Ibexa DXP Beginner Tutorial</title>
 
-    <script src="{{ asset('bundles/ezplatformadminuiassets/vendors/jquery/dist/jquery.min.js') }}"></script>
-
-    {{ encore_entry_link_tags('tutorial') }}
+    {{ encore_entry_link_tags('training') }}
 
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
@@ -25,7 +23,7 @@
         <!-- Brand and toggle -->
         <div class="navbar-header page-scroll">
             <a class="navbar-brand" href="/">
-                <img alt="Brand" src="{{ asset('../assets/images/logo.png') }}">
+                <img alt="Brand" src="{{ asset('build/images/128_bike_white_avenir.png')}}">
             </a>
         </div>
     </div>
@@ -37,7 +35,7 @@
         <div class="row" id="banner">
             <div class="col-xs-12">
                 <div class="banner-header-block">
-                    <img alt="Go Bike! logo" src="{{ asset('../assets/images/wordmark.png') }}" style="width:100%" />
+                    <img alt="Go Bike! logo" src="{{ asset('build/images/logo_just_letters.png')}}" style="width:100%" />
                     <h3 class="banner-header">{{ 'Discover new rides! Go Bike!'|trans }}</h3>
                 </div>
             </div>
@@ -86,7 +84,7 @@
     </div>
 </footer>
 
-{{ encore_entry_script_tags('tutorial-js') }}
+{{ encore_entry_script_tags('training-js') }}
 
 </body>
 </html>

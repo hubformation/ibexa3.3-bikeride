@@ -1,0 +1,36 @@
+# /config/packages/app/views.yaml
+ezdesign:
+  # You declare every available designs under 'design_list'
+  design_list:
+    app_design: [ 'bike_ride']
+ezplatform:
+  system:
+    site:
+      design: 'app_design'
+#     pagelayout: '@ezdesign/pagelayout.html.twig'
+      content_view:
+        full:
+          home_page:
+            controller: ez_query::contentQueryAction
+            template: '@ezdesign/full/all_rides.html.twig'
+            match:
+              Id\Location: 54
+            params:
+              query:
+                query_type: BikeRideList
+                limit: 4
+                assign_results_to: bike_ride_list
+          bike_ride:
+            template: "@ezdesign/full/bike_ride.html.twig"
+            match:
+              Identifier\ContentType: [ 'ride' ]
+          landmark:
+            controller: App\Controller\PointOfInterestController::pointOfInterestView
+            template: '@ezdesign/full/point_of_interest.html.twig'
+            match:
+                  Identifier\ContentType: landmark
+        modal:
+          bike_ride:
+            template: "@ezdesign/modal/point_of_interest.html.twig"
+            match:
+              Identifier\ContentType: [ 'landmark' ]

@@ -1,0 +1,31 @@
+
+{# url: {{ path( "ez_urlalias", {"contentId": content.id} ) }} #}
+
+<div class="col-md-4">
+    {{ dump(content) }}
+    <div class="card mb-4 box-shadow">
+        {{ ez_render_field(content,'photo')}}
+        <div class="card-body">
+            <h4 class="header-link-table"><a href="#todo-url" target="_self">{{ ez_render_field(content,'name') }}</a></h4>
+            <p class="card-text"></p>
+            <div class="d-flex justify-content-between align-items-center">
+
+                <p><small class="text-muted">{{ ez_render_field(content,'length') }} Km</small></p>
+                <p>
+                    <small class="text-muted">Level:
+                        {% if not ez_field_is_empty( content, "difficulty" ) %}
+                            {{ ez_render_field(content,'difficulty') }}
+                        {% endif %}
+                    </small>
+                </p>
+                <small class="text-muted border">From: {{ ez_field_value(content,'starting_point') }}</small>
+                <small class="text-muted border">To: {{ ez_field_value(content,'ending_point') }}</small>
+            </div>
+            <div class="d-flex justify-content-between button-items-right">
+                <div class="btn-group">
+                    <a href="#todo-url" target="_self"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

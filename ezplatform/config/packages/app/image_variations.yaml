@@ -1,0 +1,9 @@
+#config/packages/app/image_variations.yaml
+ezplatform:
+  system:
+    default:
+      image_variations:
+        bike_ride_main:
+          reference: ~
+          filters:
+            - { name: geometry/scaledownonly, params: [800, 640] }
