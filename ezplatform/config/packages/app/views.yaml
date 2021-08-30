@@ -10,15 +10,25 @@ ezplatform:
 #     pagelayout: '@ezdesign/pagelayout.html.twig'
       content_view:
         full:
-          home_page:
-            controller: ez_query::contentQueryAction
-            template: '@ezdesign/full/all_rides.html.twig'
+#          home_page:
+#            template: '@ezdesign/full/all_rides.html.twig'
+#            match:
+#              Id\Location: 54
+#            params:
+#              query:
+#                query_type: BikeRideList
+#                limit: 4
+#                assign_results_to: bike_ride_list
+          all_rides:
+            controller: ez_query::ContentQueryAction
+            template: "@ezdesign/full/all_rides.html.twig"
             match:
               Id\Location: 54
             params:
               query:
-                query_type: BikeRideList
-                limit: 4
+                query_type: BikeRide
+                parameters:
+                  contentType: [ 'ride' ]
                 assign_results_to: bike_ride_list
           bike_ride:
             template: "@ezdesign/full/bike_ride.html.twig"

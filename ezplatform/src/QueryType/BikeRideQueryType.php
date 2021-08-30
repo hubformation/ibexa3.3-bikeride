@@ -18,6 +18,7 @@ class BikeRideQueryType implements \eZ\Publish\Core\QueryType\QueryType
     public function getQuery(array $parameters = [])
     {
         // https://doc.ibexa.co/en/latest/guide/content_rendering/queries_and_controllers/custom_query_type/#create-a-custom-query-type
+
         $criteria = [
             new Criterion\Visibility(Criterion\Visibility::VISIBLE),
             new Criterion\ContentTypeIdentifier($parameters['contentType']),
@@ -29,10 +30,12 @@ class BikeRideQueryType implements \eZ\Publish\Core\QueryType\QueryType
         if (!empty($searchText)) {
             $criteria[] = new Criterion\FullText($searchText);
         }
-        return new Query([
+        $query = new Query([
             'filter' => new Criterion\LogicalAnd($criteria),
-            'performCount' => true
+            'performCount' => false
         ]);
+        // dd($query);
+        return $query;
         // if use paginationcontroller, we need the total count, so we say true
     }
 

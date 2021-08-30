@@ -1,3 +1,10 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+gobike_search:
+    path: /bikesearch
+    defaults: { _controller: 'App\Controller\SearchController::bikeRideSearch' }
+
+gobike_search2:
+    path: /bikesearchp
+    defaults: { _controller: 'App\Controller\SearchController::bikeRideSearchPaginated' }

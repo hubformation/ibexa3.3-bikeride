@@ -24,85 +24,13 @@
                         <strong>Starting Point</strong>
                         <hr>
                         <!-- Starting point here -->
-                        <div class="ezgmaplocation-field"><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script><script type="text/javascript">
-                                (function(win, doc) {
-                                    var mapView = function (mapId, latitude, longitude) {
-                                        var mapElt = doc.getElementById("maplocation-map-249"),
-                                            startPoint = new google.maps.LatLng(latitude, longitude),
-                                            zoom = 13,
-                                            draggable = true;
-
-                                        new google.maps.Marker({
-                                            map: new google.maps.Map(mapElt, {
-                                                center: startPoint,
-                                                zoom: zoom,
-                                                draggable: draggable,
-                                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                                            }),
-                                            position: startPoint
-                                        });
-                                    }
-                                    if ( win.addEventListener ) {
-                                        win.addEventListener(
-                                            'load',
-                                            function () {
-                                                mapView("maplocation-map-249", {{ ez_field_value(content, 'starting_point').latitude }},{{ ez_field_value(content, 'starting_point').longitude }});
-                                            },
-                                            false
-                                        );
-                                    } else if ( win.attachEvent ) {
-                                        win.attachEvent(
-                                            'onload',
-                                            function () {
-                                                mapView("maplocation-map-249", {{ ez_field_value(content, 'starting_point').latitude }},{{ ez_field_value(content, 'starting_point').longitude }});
-                                            }
-                                        );
-                                    }
-                                })(window, document);
-                            </script><div class="maplocation-map" id="maplocation-map-249" style="width:100%; height:330px"></div>
-                        </div>
-                    </div>
+                        {{ ez_render_field(content, 'starting_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
+                  </div>
                     <div class="col-xs-6">
                         <strong>End Point</strong>
                         <hr>
                         <!-- End point here -->
-                        <div class="ezgmaplocation-field"><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script><script type="text/javascript">
-                                (function(win, doc) {
-                                    var mapView = function (mapId, latitude, longitude) {
-                                        var mapElt = doc.getElementById("maplocation-map-250"),
-                                            startPoint = new google.maps.LatLng(latitude, longitude),
-                                            zoom = 13,
-                                            draggable = true;
-
-                                        new google.maps.Marker({
-                                            map: new google.maps.Map(mapElt, {
-                                                center: startPoint,
-                                                zoom: zoom,
-                                                draggable: draggable,
-                                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                                            }),
-                                            position: startPoint
-                                        });
-                                    }
-                                    if ( win.addEventListener ) {
-                                        win.addEventListener(
-                                            'load',
-                                            function () {
-                                                mapView("maplocation-map-250", {{ ez_field_value(content, 'ending_point').latitude }},{{ ez_field_value(content, 'ending_point').longitude }});
-                                            },
-                                            false
-                                        );
-                                    } else if ( win.attachEvent ) {
-                                        win.attachEvent(
-                                            'onload',
-                                            function () {
-                                                mapView("maplocation-map-250", {{ ez_field_value(content, 'ending_point').latitude }},{{ ez_field_value(content, 'ending_point').longitude }});
-                                            }
-                                        );
-                                    }
-                                })(window, document);
-                            </script><div class="maplocation-map" id="maplocation-map-250" style="width:100%; height:330px"></div>
-                        </div>
+                        {{ ez_render_field(content, 'ending_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
                     </div>
                 </div>
             </div>
@@ -117,7 +45,7 @@
 
                             <!-- Length here -->
                      {{ dump(ez_field_value(content, 'starting_point')) }}
-
+                    <p>latitude for starting point {{ ez_field_value(content,'starting_point').latitude }}</p>
                 </div>
 
 
