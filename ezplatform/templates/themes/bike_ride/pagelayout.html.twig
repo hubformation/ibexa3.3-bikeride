@@ -7,7 +7,7 @@
     <meta name="eZ Systems - Beginner tutorial" content="eZ Systems where content meets business">
     <meta name="Bike Tutorial" content="eZ Systems tutorial">
 
-    <title>{%  block title %}Titre de la page {% endblock %}</title>
+    <title>{{ page_title|default('Go Bike!') }}</title>
     <!-- <link rel="icon" type="image" href="images/favicon.ico"> -->
 
     {{ encore_entry_link_tags('training') }}
@@ -253,11 +253,19 @@
                     </ul>
                 </div>
                 <div class="col-xs-8 col-xs-offset-2 footer-links-block">
+
                     <ul class="list-inline footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Language</a></li>
-                        <li><a href="#">Support</a></li>
+                        {{ ez_render_content_query({
+                            'query': {
+                                'query_type': 'Menu',
+                                'assign_results_to': 'menuItems'
+                            },
+                            'template': '@ezdesign/pagelayout_menu.html.twig',
+                        }) }}
+                        <li><a href="#">- Contact Us</a></li>
+                        <li><a href="#">- My Account</a></li>
+                        <li><a href="#">- Language</a></li>
+                        <li><a href="#">- Support</a></li>
                     </ul>
                 </div>
             </div>

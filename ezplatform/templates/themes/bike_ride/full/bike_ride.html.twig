@@ -1,16 +1,15 @@
 {% extends "@ezdesign/pagelayout.html.twig" %}
-{%  set title = ez_content_name(content) %}
-{%  block title %}
-    {{ title }}
-{% endblock %}
+
+{% set page_title = ez_content_name(content) %}
+
 {% block content %}
-<section class="below-navbar">
+    <section class="below-navbar">
         <div class="container">
             <div class="row regular-content-size">
                 <div class="col-xs-10 col-xs-offset-1">
                     <div class="col-xs-12 text-center">
                         <!-- Title here -->
-                        <h2 class="extra-padding-left">{{ title }}</h2>
+                        <h2 class="extra-padding-left">{{ page_title }}</h2>
                     </div>
                 </div>
             </div>
@@ -25,7 +24,7 @@
                         <hr>
                         <!-- Starting point here -->
                         {{ ez_render_field(content, 'starting_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
-                  </div>
+                    </div>
                     <div class="col-xs-6">
                         <strong>End Point</strong>
                         <hr>
@@ -43,8 +42,8 @@
             <div class="row regular-content-size">
                 <div class="col-xs-10 col-xs-offset-1 padding-box">
 
-                            <!-- Length here -->
-                     {{ dump(ez_field_value(content, 'starting_point')) }}
+                    <!-- Length here -->
+                    {{ dump(ez_field_value(content, 'starting_point')) }}
                     <p>latitude for starting point {{ ez_field_value(content,'starting_point').latitude }}</p>
                 </div>
 
@@ -76,23 +75,18 @@
 
                             <!-- Photo here -->
                             {{ ez_render_field(content, 'photo', { 'parameters': {'alias': 'bike_ride_main'} }) }}
-                            {{ ez_render_field(content, 'photo', {'attr': {
-                            width: '100%'}}) }}
-                            <!--img alt="" src="/assets/images/geneva.png" width="100%"-->
 
                             <!-- Description here -->
-                            <div class="ezrichtext-field">
-                                {{ ez_render_field(content, 'description') }}
-                            </div>
-
+                            {{ ez_render_field(content, 'description') }}
+                            <!-- List of related landmarks -->
+                            {{ ez_render_field(content, 'landmarks', {template: _self } ) }}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
-    {{ ez_render_field(content, 'landmarks', {template: _self } ) }}
-{%  endblock %}
+
+{% endblock %}
 
 {% block ezobjectrelationlist_field %}
     {% if not ez_field_is_empty(content, field) %}

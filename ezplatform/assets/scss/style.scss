@@ -1,0 +1,569 @@
+//colors
+$white: #ffffff;
+$color_tundora_approx: #454545;
+$color_plantation_approx: #245640;
+$color_genoa_approx: #107360;
+$color_zest_approx: #e67e22;
+$color_oslo_gray_approx: #7f8c8d;
+$color_niagara_approx: #16a085;
+$color_dove_gray_90_approx: rgba(107, 107, 107, 0.9);
+$color_suva_gray_approx: #888888;
+$color_rose_bud_cherry_approx: #80004b;
+$color_pickled_bluewood_approx: #2c3e50;
+$black: black;
+$color_athens_gray_approx: #ecf0f1;
+$color_silver_90_approx: rgba(188, 188, 188, 0.9);
+$color_dove_gray_approx: #707070;
+$color_gravel_approx: #4a4a4a;
+$color_mountain_mist_approx: #969696;
+$color_pumice_approx: #c9c9c9;
+$color_ocean_green_approx: #419e76;
+$color_sambuca_approx: #382010;
+$color_tenn_approx: #d35400;
+$color_genoa_90_approx: rgba(16,115,96,.9);
+$color_boston_blue_approx: #2980b9;
+$color_grey_dark: #666666;
+$body_color: #f8f9fa;
+//fonts
+$font_0: Helvetica;
+$font_1: Arial;
+$font_2: sans-serif;
+$font_3: Roboto Slab;
+$font_4: Oswald;
+$font_5: Fjalla One;
+
+//urls
+$url_0: url(../images/Carousel_2nd.png);
+
+body {
+  background-color:$body_color;
+}
+p {
+  font-family: $font_0, $font_1, $font_2;
+  font-size: 16px;
+}
+span {
+  font-family: $font_0, $font_1, $font_2;
+  font-size: 16px;
+}
+h2 {
+  font-family: $font_3;
+  font-weight: bold;
+}
+h3 {
+  font-family: $font_3;
+  font-style: italic;
+  color: $white;
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: 1px 1px $color_tundora_approx;
+  font-size: 1.75em;
+}
+h4 {
+  font-family: $font_4, $font_2;
+  font-weight: bolder;
+  font-size: 1.25em;
+}
+.navbar-default {
+  background-color: $color_grey_dark;
+  height: 3em;
+  background-image: none;
+  background-repeat: no-repeat;
+  border-color: $color_grey_dark;
+}
+.navbar {
+  padding-left: 0;
+  margin-bottom: 0;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0;
+  a {
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    font-family: $font_5;
+    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: 1px 1px $color_tundora_approx;
+  }
+}
+.navbar-right {
+  margin-right: 0;
+}
+.navbar-brand {
+  margin-top: -0.85em;
+  padding-right: 0;
+  width: 50%;
+  height: 5.25em;
+  img {
+    width: 50%;
+    margin-top: 0.3em;
+  }
+}
+@media(max-width: 768px) {
+  .navbar-brand {
+    margin-top: -1em;
+    height: 5em;
+    img {
+      width: 30%;
+      margin-top: 0.35em;
+    }
+  }
+  .navbar-default {
+    height: 6em;
+  }
+}
+
+.breadcrumb {
+  background-color: transparent;
+  a {
+    color: $color_oslo_gray_approx;
+    text-decoration: none;
+  }
+  > .active {
+    color: $color_niagara_approx;
+  }
+}
+.below-navbar {
+}
+.row-padding {
+  padding: 2em 0 0;
+}
+#banner {
+  height: 400px;
+  width: 100%;
+  background-image: $url_0;
+  background-repeat: center no-repeat;
+  margin: 0 auto;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+.banner-header-block {
+  margin: 0 auto;
+  width: 40%;
+  height: 15%;
+  padding: 2% 5%;
+  background-color: $color_dove_gray_90_approx;
+  text-align: center;
+  margin-top: 8.5em;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+}
+.banner-header {
+  font-family: $font_5;
+  font-style: italic;
+  color: $white;
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: 1px 1px $color_tundora_approx;
+}
+.center-block-text {
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  color: $white;
+  margin-top: 7em;
+}
+.center-block-text-half {
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  color: $white;
+  margin-top: 9em;
+}
+.table-header {
+  background-color: $color_zest_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px;
+  color: $white;
+  letter-spacing: 1px;
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: 1px 1px $color_suva_gray_approx;
+}
+.star-color {
+  color: $color_rose_bud_cherry_approx;
+}
+.header-link-table {
+  font-family: $font_3, $font_2;
+  font-style: normal;
+  margin-top: -1px;
+  font-size: 1.25em;
+}
+.new-header {
+  font-style: normal;
+  color: $black;
+  padding: 0.5em 0 2em 0;
+  font-family: $font_5, $font_2;
+}
+.pagination {
+  > li > a {
+    color: $color_zest_approx;
+  }
+  > .active > a {
+    background-color: $color_zest_approx;
+    border-color: $color_zest_approx;
+  }
+}
+.box-style {
+  background-color: $color_athens_gray_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px;
+  padding: 2em 2em 1em 2em;
+}
+.searcher {
+  margin-top: 1em;
+}
+.searcher-text {
+  padding: .7em 0.25em 0 0;
+}
+.button-padding {
+  padding-top: 1.4em;
+}
+.photos {
+  margin-top: 2.5em;
+}
+#map-container {
+  height: 400px;
+  width: 100%;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px;
+}
+#map-textbox {
+  height: 400px;
+  width: 300px;
+  margin-left: 100px;
+  background-color: $color_silver_90_approx;
+  color: $white;
+  position: absolute;
+  z-index: 2;
+}
+.map-headerbox {
+  padding: 0.5em;
+  background-color: $color_dove_gray_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  width: 90%;
+  margin-left: 5%;
+  letter-spacing: 1px;
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: 0 2px 2px $color_gravel_approx;
+}
+.map-regulartext {
+  padding: 0.5em 0.5em 0.5em 1em;
+  background-color: $color_mountain_mist_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  width: 90%;
+  margin-left: 5%;
+}
+.map-circles {
+  margin-top: 18%;
+  width: 100%;
+  margin-left: 8%;
+}
+.map-circle-single {
+  display: inline-block;
+  background-color: $color_pumice_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 100px;
+  width: 17%;
+  padding: 0.5em;
+  float: left;
+  text-align: center;
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: 0.25px 0.25px $color_tundora_approx;
+  margin: 0 0.25em 0 0.5em;
+}
+.bottom-border {
+  border-top: 3px solid $color_ocean_green_approx;
+}
+.footer-text {
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  color: $white;
+}
+.footer-color-one {
+  height: 1em;
+  padding: 1em 0;
+}
+.footer-color-two {
+  background-color: $color_grey_dark;
+  height: 9em;
+  padding: 1.25em 0 2.5em 0;
+}
+.footer-color-three {
+  height: 1.5em;
+  padding: 1em 0 2em;
+  color: $black;
+}
+.footer-links-block {
+  padding: 1em 0 0.5em 0;
+}
+.footer-links {
+  a {
+    font-family: $font_3;
+    color: $white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  li {
+    list-style: none;
+  }
+}
+.underscore-green {
+  border-bottom: 2px solid $color_zest_approx;
+}
+.box-ride {
+  border: 3px solid $color_grey_dark;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+}
+.special-number {
+  color: $black;
+  font-style: normal;
+  font-weight: bolder;
+  text-align: center;
+}
+.special-number-margin {
+  margin-bottom: 0;
+  margin-top: 1.25em;
+}
+.buttons {
+  margin: 4em 0;
+}
+.button {
+  background-color: $color_zest_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  padding: 1em 3em;
+  width: 75%;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 2px 2px $color_suva_gray_approx;
+  &:hover {
+    background-color: $color_tenn_approx;
+    text-decoration: none;
+  }
+}
+a {
+  button{
+    color: $color_grey_dark;
+  }
+}
+#carousel-box {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+}
+.infowindow-text {
+  font-size: 1.1em;
+  font-family: $font_0, $font_1, $font_2;
+  text-align: justify;
+}
+.bike-modal {
+  .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0;
+    text-align: center;
+    //Instead of the line below you could use @include background-clip($clip)
+    background-clip: border-box;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+  .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 70px;
+    height: 70px;
+    background-color: $color_genoa_approx;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      opacity: .3;
+    }
+    .lr {
+      z-index: 1051;
+      width: 3px;
+      height: 50px;
+      margin-left: 34px;
+      margin-top: 10px;
+      background-color: $white;
+      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: rotate(45deg);
+      .rl {
+        z-index: 1052;
+        width: 3px;
+        height: 50px;
+        background-color: $white;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .modal-backdrop {
+    display: none;
+    opacity: 0;
+  }
+}
+hr {
+  border-top: 1px solid $color_genoa_approx;
+}
+.caption {
+  position: absolute;
+  width: 90.5%;
+  height: 100%;
+  opacity: 0;
+  background: $color_grey_dark;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all ease .5s;
+  &:hover {
+    opacity: 1;
+  }
+  .caption-content {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: $white;
+  }
+}
+figure {
+  margin: 0px;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+.bottom {
+  padding-bottom: 0.5em;
+}
+.bottom-extra {
+  margin-bottom: 1em;
+}
+.bottom-plus {
+  padding-bottom: 1.25em;
+}
+.shadow {
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  letter-spacing: 1px;
+}
+.strong {
+  font-weight: bold;
+}
+.blue-text {
+  color: $color_boston_blue_approx;
+}
+.regular-content-size {
+  width: 100%;
+  margin: 0 auto;
+}
+.padding-box {
+  padding: 1em 0;
+}
+.pre-small {
+  font-size: 0.9em;
+}
+.small {
+  font-size: 0.8em;
+}
+.img-responsive {
+  width: 100%;
+}
+.extra-padding-left {
+  padding-left: 1em;
+}
+.landing_page-row {
+  display: flex;
+  margin: 0;
+}
+a:hover {
+  color: $color_plantation_approx;
+}
+#total-navbar ul {
+  margin-left: -6em;
+  margin-top: 0.25em;
+}
+table a {
+  color: $color_pickled_bluewood_approx;
+}
+.table tr td {
+  &:nth-child(1) {
+    width: 20%;
+  }
+  &:nth-child(2) {
+    width: 35%;
+  }
+}
+.photos-box img {
+  height: 9em;
+  width: 100%;
+}
+
+/* bootstrap4 */
+.navbar-brand, .navbar-nav > li > a {
+  text-shadow: none;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px !important;
+  }
+}
+
+/* card bike ride list*/
+.card.mb-4.box-shadow{
+  margin-bottom: 1.5rem;
+}
+.card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+.card.box-shadow img{
+  height: 225px; width: 100%; display: block;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-body .button-items-right {
+  text-align: right;
+}
+.card-body .button-items-right button {
+  border: 1px solid #eee;
+}
+
+.card-body .text-muted{
+  color: #777;
+}
+.card-body .text-muted.border{
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+.card .header-link-table a {
+  color:$color_grey_dark;
+}
+
+.list-group .pagination > li > a {
+  color: $color_grey_dark;
+}
+/*end card*/
