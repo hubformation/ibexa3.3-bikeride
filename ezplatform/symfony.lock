@@ -170,7 +170,7 @@
         "version": "3.3.0"
     },
     "ibexa/oss": {
-        "version": "3.3.6",
+        "version": "3.3.7",
         "files": [
             "config/packages/dfs/dfs.yaml",
             "config/packages/cache_pool/cache.memcached.yaml",
@@ -212,6 +212,12 @@
     },
     "ibexa/post-install": {
         "version": "1.0.3"
+    },
+    "ibexa/templated-uri-bundle": {
+        "version": "3.3.1"
+    },
+    "ibexa/templated-uri-router": {
+        "version": "3.3.0"
     },
     "imagine/imagine": {
         "version": "1.2.4"

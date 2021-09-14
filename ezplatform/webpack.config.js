@@ -41,19 +41,7 @@ Encore
   ])
   .autoProvidejQuery();
 
-/*
-Encore
-  .addStyleEntry('tutorial', [
-    path.resolve(__dirname, './assets/css/normalize.css'),
-    path.resolve(__dirname, './assets/css/bootstrap.min.css'),
-    path.resolve(__dirname, './assets/css/bootstrap-theme.css'),
-    path.resolve(__dirname, './assets/css/style.css')
-  ])
-  .addEntry('tutorial-js', [
-    path.resolve(__dirname, './assets/js/bootstrap.min.js')
-  ]);
-*/
-
+Encore.addEntry('app', './assets/app.js');
 
 const projectConfig = Encore.getWebpackConfig();
 module.exports = [ eZConfig, ...customConfigs, projectConfig ];

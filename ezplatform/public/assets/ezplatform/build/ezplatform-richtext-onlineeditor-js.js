@@ -2734,7 +2734,11 @@ var EzBtnCustomTagUpdate = /*#__PURE__*/function (_EzWidgetButton) {
     key: "cancelCustomTagEdit",
     value: function cancelCustomTagEdit() {
       var widget = this.getWidget() || this.widget;
-      widget.setFocused(true);
+
+      if (widget) {
+        widget.setFocused(true);
+      }
+
       this.props.cancelExclusive();
     }
     /**
@@ -5450,6 +5454,7 @@ var EzBtnLinkEdit = /*#__PURE__*/function (_Component) {
       var modifySelection = {
         advance: true
       };
+      var caretToEndMovingElements = ['strong', 'u', 'em', 'sup', 'sub', 's'];
 
       if (this.state.linkHref) {
         linkAttrs.href = this.state.linkHref;
@@ -5457,6 +5462,10 @@ var EzBtnLinkEdit = /*#__PURE__*/function (_Component) {
         this.invokeWithFixedScrollbar(function () {
           editor.fire('actionPerformed', _this8);
           var path = editor.elementPath();
+
+          if (path && caretToEndMovingElements.includes(path.lastElement.getName())) {
+            editor.eZ.moveCaretToElement(editor, path.lastElement.getParent(), CKEDITOR.POSITION_AFTER_END);
+          }
 
           if (path && path.lastElement.getName() === 'br') {
             var parent = path.lastElement.getParent();
@@ -9656,8 +9665,9 @@ var embedBaseDefinition = {
 
 
   var moveCaretToElement = function moveCaretToElement(editor, element) {
+    var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : CKEDITOR.POSITION_AFTER_START;
     var range = editor.createRange();
-    range.moveToPosition(element, CKEDITOR.POSITION_AFTER_START);
+    range.moveToPosition(element, position);
     editor.getSelection().selectRanges([range]);
   };
   /**
@@ -9695,6 +9705,7 @@ var embedBaseDefinition = {
        * @method eZ.moveCaretToElement
        * @param {CKEDITOR.editor} editor
        * @param {CKEDITOR.dom.element} element
+       * @param {Number} position
        */
 
       editor.eZ.moveCaretToElement = moveCaretToElement;
@@ -10919,7 +10930,7 @@ var EzConfigBase = /*#__PURE__*/function (_EzConfigButtonsBase) {
         var scrollLeft = parseInt(block.$.scrollLeft, 10);
         var blockLeftMargin = block.$.offsetLeft;
         var blockWidth = block.$.offsetWidth;
-        var toolbarWidth = document.querySelector('.ae-toolbar-floating').offsetWidth;
+        var toolbarWidth = document.querySelector('.ae-toolbar-styles').offsetWidth;
         var maxLeft = blockWidth - toolbarWidth;
         range.selectNodeContents(positionReference.$);
         left = range.getBoundingClientRect().left + scrollLeft;
