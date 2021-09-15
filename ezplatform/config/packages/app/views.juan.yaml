@@ -1,0 +1,25 @@
+# /config/packages/app/views.yaml
+ezdesign:
+  # You declare every available designs under 'design_list'
+  design_list:
+    app_design: [ 'juan_ride']
+ezplatform:
+  system:
+    site:
+      design: 'app_design'
+      # pagelayout: '@ezdesign/pagelayout.html.twig'
+      content_view:
+        full:
+          bike_ride:
+            template: "@ezdesign/full/bike_ride.html.twig"
+            match:
+              Identifier\ContentType: [ 'ride' ]
+          landmark:
+            template: "@ezdesign/full/landmark.html.twig"
+            match:
+              Identifier\ContentType: [ 'landmark' ]
+        line:
+          landmark:
+            template: "@ezdesign/line/landmark.html.twig"
+            match:
+              Identifier\ContentType: [ 'landmark' ]

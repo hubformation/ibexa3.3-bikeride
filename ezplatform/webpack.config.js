@@ -41,6 +41,18 @@ Encore
   ])
   .autoProvidejQuery();
 
+Encore
+  .addStyleEntry('formation_juan', [
+    path.resolve(__dirname, './assets/css/normalize.css'),
+    path.resolve(__dirname, './assets/css/bootstrap.min.css'),
+    path.resolve(__dirname, './assets/css/bootstrap-theme.css'),
+    path.resolve(__dirname, './assets/scss/style-formation-juan.scss') // Our custom styling
+  ])
+  .addEntry('formation_juan-js', [
+    path.resolve(__dirname, './assets/js/bootstrap.min.js')
+  ])
+  .autoProvidejQuery();
+
 Encore.addEntry('app', './assets/app.js');
 
 const projectConfig = Encore.getWebpackConfig();

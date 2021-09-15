@@ -1,5 +1,5 @@
 imports:
-    - app/views.yaml
+    - app/views.juan.yaml
     - app/image_variations.yaml
 
 parameters:

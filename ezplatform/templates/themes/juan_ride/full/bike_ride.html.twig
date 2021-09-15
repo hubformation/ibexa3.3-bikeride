@@ -1,0 +1,33 @@
+{% extends "@ezdesign/pagelayout.html.twig" %}
+
+{% block content %}
+    <p>Ceci est le bloc pour mettre un bikeride</p>
+    {{ dump(content) }}
+    <h1>{{ ez_content_name(content) }}</h1>
+    {{ ez_render_field(content,'starting_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
+    <div>
+        {{ ez_render_field(content, 'description') }}
+        {{ ez_render_field(content,'photo') }}
+        <p>Distance: {{ ez_field_value(content, 'length') }}</p>
+        {{ ez_render_field(content, 'landmarks', {template: _self } ) }}
+    </div>
+{% endblock %}
+
+{% block ezobjectrelationlist_field %}
+    {% if not ez_field_is_empty(content, field) %}
+        <h4 class="underscore">Point of Interests</h4>
+        <ul>
+        {% for content_id in field.value.destinationContentIds %}
+            {% if parameters.available[content_id] %}
+                {{ render(controller(
+                    'ez_content:viewAction',
+                    {
+                        contentId: content_id,
+                        viewType: 'line'
+                    }
+                )) }}
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
