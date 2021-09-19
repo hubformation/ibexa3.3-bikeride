@@ -30,3 +30,9 @@ services:
     App\Controller\SearchController:
         arguments:
             $queryTypeRegistry: '@ezpublish.query_type.registry'
+
+    App\FieldType\Point2D\Type:
+        tags:
+            - { name: ezplatform.field_type, alias: point2d }
+            - { name: ezplatform.field_type.form_mapper.value, fieldType: point2d }
+            - { name: ezplatform.field_type.form_mapper.definition, fieldType: point2d }
