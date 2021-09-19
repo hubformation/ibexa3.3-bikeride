@@ -1,14 +1,49 @@
 {% extends "@ezdesign/pagelayout.html.twig" %}
 
+{% block title %}
+    {{ ez_content_name(content) }}
+{% endblock %}
+
+
+
+
 {% block content %}
-    <p>Ceci est le bloc pour mettre un bikeride</p>
     {{ dump(content) }}
-    <h1>{{ ez_content_name(content) }}</h1>
-    {{ ez_render_field(content,'starting_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
+    <div class="row pb-5">
+        <div class="col-md-6"> {{ ez_render_field(content,'photo') }}</div>
+        <div class="col-md-6">
+            <h1>{{ ez_content_name(content) }}</h1>
+            {{ ez_render_field(content, 'description') }}
+            <div class="info">
+                <div class="length"><span>{{ 'Distance'|trans }}{{ ':'|trans }} </span> {{ ez_field_value(content, 'length') }}</div>
+                {% if not ez_field_is_empty( content, "difficulty" ) %}
+                    <div class="d-flex difficulty">
+                        <span>{{ 'Difficulty'|trans }}{{ ':'|trans }} </span> {{ ez_render_field(content,'difficulty') }}</div>
+                {% endif %}
+                <div class="d-flex  author">
+                    <span>{{ 'Author'|trans }}{{ ':'|trans }} </span> {{ ez_render_field(content,'author') }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="map">
+            <div class="col p-5">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Starting Point</h2>
+                        {{ ez_render_field(content,'starting_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>Ending Point</h2>
+                        {{ ez_render_field(content,'ending_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div>
-        {{ ez_render_field(content, 'description') }}
-        {{ ez_render_field(content,'photo') }}
-        <p>Distance: {{ ez_field_value(content, 'length') }}</p>
         {{ ez_render_field(content, 'landmarks', {template: _self } ) }}
     </div>
 {% endblock %}
@@ -17,17 +52,17 @@
     {% if not ez_field_is_empty(content, field) %}
         <h4 class="underscore">Point of Interests</h4>
         <ul>
-        {% for content_id in field.value.destinationContentIds %}
-            {% if parameters.available[content_id] %}
-                {{ render(controller(
-                    'ez_content:viewAction',
-                    {
-                        contentId: content_id,
-                        viewType: 'line'
-                    }
-                )) }}
-            {% endif %}
-        {% endfor %}
+            {% for content_id in field.value.destinationContentIds %}
+                {% if parameters.available[content_id] %}
+                    {{ render(controller(
+                        'ez_content:viewAction',
+                        {
+                            contentId: content_id,
+                            viewType: 'line'
+                        }
+                    )) }}
+                {% endif %}
+            {% endfor %}
         </ul>
     {% endif %}
 {% endblock %}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>List of all Rides</source>
+                <target>List of all Rides (en)</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Ride (en)</source>
+                <target>Ride (en)</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>From</source>
+                <target>From (en)</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>To</source>
+                <target>To (en)</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Starting point</source>
+                <target>Starting point (en)</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Ending point</source>
+                <target>Ending point (en)</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Landmarks</source>
+                <target>Landmarks (en)</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Difficulty</source>
+                <target>Difficulty (en)</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Discover new rides! Go Bike!</source>
+                <target>Discover new rides! Go Bike! (en)</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

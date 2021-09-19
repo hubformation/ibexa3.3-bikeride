@@ -1,5 +1,14 @@
 {% extends "@ezdesign/pagelayout.html.twig" %}
 
+{%  block title %}
+    {{ ez_content_name(content) }}
+{% endblock %}
+
 {% block content %}
-    <p>À toi Juan</p>
+    {{ dump(content) }}
+    <div class="full-width">{{ ez_render_field(content,'photo') }}</div>
+    <h1>{{ ez_content_name(content) }}</h1>
+    {{ ez_render_field(content, 'description') }}
+    {{ ez_render_field(content,'location', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
+
 {% endblock %}
