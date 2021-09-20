@@ -1,0 +1,29 @@
+ezplatform:
+    siteaccess:
+        list: [site, bikeride_fr, bikeride_en, admin]
+        groups:
+            admin_group: [admin]
+            front_group: [bikeride_fr, bikeride_en, site]
+        default_siteaccess: site
+        match:
+            Map\URI:
+                fr: bikeride_fr
+                en: bikeride_en
+                admin: admin
+    system:
+        frontend_group:
+            translation_siteaccesses: [ bikeride_fr, bikeride_en ]
+        site:
+            languages:
+                - fra-CA
+                - eng-US
+                - eng-GB
+        bikeride_en:
+            languages:
+                - eng-US
+                - eng-GB
+        bikeride_fr:
+            languages:
+                - fra-CA
+                - eng-US
+                - eng-GB

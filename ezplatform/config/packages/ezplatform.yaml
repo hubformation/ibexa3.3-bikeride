@@ -1,6 +1,8 @@
 imports:
     - app/views.juan.yaml
     - app/image_variations.yaml
+    - app/site_accesses.yaml
+    - app/languages.yaml
 
 parameters:
     locale_fallback: en
@@ -61,13 +63,13 @@ ezplatform:
                 connection: default
 
     # Siteaccess configuration, with one siteaccess per default
-    siteaccess:
-        list: [site]
-        groups:
-            site_group: [site]
-        default_siteaccess: site
-        match:
-            URIElement: 1
+#    siteaccess:
+#        list: [site]
+#        groups:
+#            site_group: [site]
+#        default_siteaccess: site
+#        match:
+#            URIElement: 1
 
     # System settings, read in following order: `default`, <siteaccess-group>, <siteacces>, and `global`
     # TIP: For multisite installations organize shared config into SiteAccess groups,
@@ -89,8 +91,8 @@ ezplatform:
                 purge_servers: ['%purge_server%']
                 varnish_invalidate_token: '%varnish_invalidate_token%'
 
-        site:
-            languages: [eng-GB]
+#        site:
+#            languages: [eng-GB]
 
     url_alias:
         slug_converter:

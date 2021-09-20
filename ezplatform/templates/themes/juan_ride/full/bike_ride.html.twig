@@ -4,9 +4,6 @@
     {{ ez_content_name(content) }}
 {% endblock %}
 
-
-
-
 {% block content %}
     {{ dump(content) }}
     <div class="row pb-5">
@@ -31,11 +28,11 @@
             <div class="col p-5">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Starting Point</h2>
+                        <h2>{{ 'Starting Point' | trans }}</h2>
                         {{ ez_render_field(content,'starting_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
                     </div>
                     <div class="col-sm-6">
-                        <h2>Ending Point</h2>
+                        <h2>{{ 'Ending Point' | trans }}</h2>
                         {{ ez_render_field(content,'ending_point', {'parameters': { 'height': '330px', 'width': '100%', 'showMap': true, 'showInfo': false }}) }}
 
                 </div>

@@ -4,51 +4,51 @@
         <body>
             <trans-unit id="1">
                 <source>List of all Rides</source>
-                <target>List of all Rides (en)</target>
+                <target>List of all Rides (fr)</target>
             </trans-unit>
             <trans-unit id="2">
-                <source>Ride (en)</source>
-                <target>Ride (en)</target>
+                <source>Ride (fr)</source>
+                <target>Ride (fr)</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>From</source>
-                <target>From (en)</target>
+                <target>From (fr)</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>To</source>
-                <target>To (en)</target>
+                <target>To (fr)</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>Starting Point</source>
-                <target>Starting Point (en)</target>
+                <target>Starting Point (fr)</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>Ending Point</source>
-                <target>Ending Point (en)</target>
+                <target>Ending Point (fr)</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>Landmarks</source>
-                <target>Landmarks (en)</target>
+                <target>Landmarks (fr)</target>
             </trans-unit>
             <trans-unit id="8">
                 <source>Difficulty</source>
-                <target>Difficulty (en)</target>
+                <target>Difficulty (fr)</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>Author</source>
-                <target>Author (en)</target>
+                <target>Author (fr)</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>Distance</source>
-                <target>Distance (en)</target>
+                <target>Distance (fr)</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>:</source>
-                <target>:</target>
+                <target>&#160;:</target>
             </trans-unit>
             <trans-unit id="15">
                 <source>Discover new rides! Go Bike!</source>
-                <target>Discover new rides! Go Bike! (en)</target>
+                <target>Discover new rides! Go Bike! (fr)</target>
             </trans-unit>
         </body>
     </file>

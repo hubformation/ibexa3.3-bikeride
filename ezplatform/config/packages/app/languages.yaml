@@ -1,0 +1,5 @@
+ezplatform:
+    locale_conversion:
+        eng-GB: en_GB
+        eng-US: en_US
+        fra-CA: fr_CA
