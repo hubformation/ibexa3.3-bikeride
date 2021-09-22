@@ -19,6 +19,10 @@ ezplatform:
             template: "@ezdesign/full/bike_ride.html.twig"
             match:
               Identifier\ContentType: [ 'ride' ]
+          pages:
+            template: "@ezdesign/full/page.html.twig"
+            match:
+              Identifier\ContentType: [ 'page' ]
           landmark:
             template: "@ezdesign/full/landmark.html.twig"
             match:

@@ -46,6 +46,11 @@
                 <source>:</source>
                 <target>:</target>
             </trans-unit>
+            <trans-unit id="12">
+                <source>Alt lang</source>
+                <target>Version française</target>
+            </trans-unit>
+
             <trans-unit id="15">
                 <source>Discover new rides! Go Bike!</source>
                 <target>Discover new rides! Go Bike! (en)</target>
