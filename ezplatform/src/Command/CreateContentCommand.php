@@ -171,20 +171,18 @@ class CreateContentCommand extends Command
                 // instantiate a location create struct from the parent location
                 $locationCreateStruct = $this->locationService->newLocationCreateStruct($parentLocationId);
                 dump($locationCreateStruct);
-                return Command::SUCCESS;
-
+                //dump($contentCreateStruct);
                 // create a draft using the content and location create struct and publish it
                 $draft = $this->contentService->createContent($contentCreateStruct, array($locationCreateStruct));
 
-                dump($draft);
-                return Command::SUCCESS;
+                // dump($draft);
 
                 $content = $this->contentService->publishVersion($draft->versionInfo);
 
                 // print out the content
                 //dump($content);
 
-
+                return Command::SUCCESS;
 
             }
                 // Content type or location not found
@@ -192,6 +190,8 @@ class CreateContentCommand extends Command
                 // Required field missing or empty
             catch ( Exceptions\NotFoundException | Exceptions\ContentFieldValidationException | Exceptions\ContentValidationException $e) {
                 $output->writeln($e->getMessage());
+                $output->writeln($e->getTraceAsString());
+                throw $e;
             }
         }
         return 0;

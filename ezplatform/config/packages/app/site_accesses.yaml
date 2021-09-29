@@ -15,9 +15,9 @@ ezplatform:
             translation_siteaccesses: [ bikeride_fr, bikeride_en ]
         site:
             languages:
+                - eng-GB
                 - fra-CA
                 - eng-US
-                - eng-GB
         bikeride_en:
             languages:
                 - eng-US
