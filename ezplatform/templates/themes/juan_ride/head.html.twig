@@ -14,7 +14,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Presentation</a>
+                    <a class="nav-link active" aria-current="page"
+                       href="{{ path("ez_urlalias", {"locationId":76}) }}">
+                        Présentation
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                       href="{{ path("ez_urlalias", {"locationId":54}) }}">
+                        All ride
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Search</a>

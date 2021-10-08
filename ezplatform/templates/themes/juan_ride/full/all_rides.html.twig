@@ -1,0 +1,19 @@
+{% extends "@ezdesign/pagelayout.html.twig" %}
+{%  block title %}
+    {{ ez_content_name(content) }}
+{% endblock %}
+
+{% block content %}
+
+    <section class="list-group">
+        <div class="container">
+            <h1>{{ ez_content_name(content) }}</h1>
+            <div class="row gx-5">
+                {% for bike_ride in bike_ride_list.searchHits %}
+                {% include '@ezdesign/line/bike_ride.html.twig' with {content: bike_ride.valueObject}%}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

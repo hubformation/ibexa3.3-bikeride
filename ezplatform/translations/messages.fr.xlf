@@ -54,7 +54,15 @@
                 <source>distance-plurialize</source>
                 <target>{count, plural, =0 {sur place?!} one {kilometer} other {kilometers}}</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>point d'intérêt</source>
+                <target>point d'intérêt</target>
+            </trans-unit>
             <trans-unit id="15">
+                <source>© GoBike 2021 - Tous Droits Réservés</source>
+                <target>© GoBike 2021 - Tous Droits Réservés</target>
+            </trans-unit>
+            <trans-unit id="25">
                 <source>Discover new rides! Go Bike!</source>
                 <target>Discover new rides! Go Bike! (fr)</target>
             </trans-unit>

@@ -50,8 +50,15 @@
                 <source>Alt lang</source>
                 <target>Version française</target>
             </trans-unit>
-
+            <trans-unit id="14">
+                <source>point d'intérêt</source>
+                <target>landmarks</target>
+            </trans-unit>
             <trans-unit id="15">
+                <source>© GoBike 2021 - Tous Droits Réservés</source>
+                <target>© GoBike 2021 - Copyright</target>
+            </trans-unit>
+            <trans-unit id="25">
                 <source>Discover new rides! Go Bike!</source>
                 <target>Discover new rides! Go Bike! (en)</target>
             </trans-unit>
