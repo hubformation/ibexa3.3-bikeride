@@ -15,10 +15,10 @@
 
         {% if  nbLandmarks > 0 %}
             <div class="text-muted">
-                {{ nbLandmarks }} {{ 'point d\'intérêt'|trans }}</div>
+                {{ nbLandmarks }} {{ 'landmark(s)'|trans }}</div>
         {% endif %}
 
-        <div class="d-grid gap-2 col mx-auto mt-3"><a href="{{ path( "ez_urlalias", {"contentId": content.id} ) }} " class="btn bg-success text-white" target="_self">View</a></div>
+        <div class="d-grid gap-2 col mx-auto mt-3"><a href="{{ path( "ez_urlalias", {"contentId": content.id} ) }} " class="btn bg-success text-white" target="_self">{{ 'View'|trans }}</a></div>
 
     </div>
 </div>

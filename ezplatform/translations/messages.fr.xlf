@@ -1,71 +1,225 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-    <file source-language="en" datatype="plaintext" original="file.ext">
-        <body>
-            <trans-unit id="1">
-                <source>List of all Rides</source>
-                <target>List of all Rides (fr)</target>
-            </trans-unit>
-            <trans-unit id="2">
-                <source>Ride (fr)</source>
-                <target>Ride (fr)</target>
-            </trans-unit>
-            <trans-unit id="3">
-                <source>From</source>
-                <target>From (fr)</target>
-            </trans-unit>
-            <trans-unit id="4">
-                <source>To</source>
-                <target>To (fr)</target>
-            </trans-unit>
-            <trans-unit id="5">
-                <source>Starting Point</source>
-                <target>Starting Point (fr)</target>
-            </trans-unit>
-            <trans-unit id="6">
-                <source>Ending Point</source>
-                <target>Ending Point (fr)</target>
-            </trans-unit>
-            <trans-unit id="7">
-                <source>Landmarks</source>
-                <target>Landmarks (fr)</target>
-            </trans-unit>
-            <trans-unit id="8">
-                <source>Difficulty</source>
-                <target>Difficulty (fr)</target>
-            </trans-unit>
-            <trans-unit id="9">
-                <source>Author</source>
-                <target>Author (fr)</target>
-            </trans-unit>
-            <trans-unit id="10">
-                <source>Distance</source>
-                <target>Distance (fr)</target>
-            </trans-unit>
-            <trans-unit id="11">
-                <source>:</source>
-                <target>&#160;:</target>
-            </trans-unit>
-            <trans-unit id="12">
-                <source>Alt lang</source>
-                <target>English version</target>
-            </trans-unit>
-            <trans-unit id="13">
-                <source>distance-plurialize</source>
-                <target>{count, plural, =0 {sur place?!} one {kilometer} other {kilometers}}</target>
-            </trans-unit>
-            <trans-unit id="14">
-                <source>point d'intérêt</source>
-                <target>point d'intérêt</target>
-            </trans-unit>
-            <trans-unit id="15">
-                <source>© GoBike 2021 - Tous Droits Réservés</source>
-                <target>© GoBike 2021 - Tous Droits Réservés</target>
-            </trans-unit>
-            <trans-unit id="25">
-                <source>Discover new rides! Go Bike!</source>
-                <target>Discover new rides! Go Bike! (fr)</target>
-            </trans-unit>
-        </body>
-    </file>
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2021-10-17T09:17:01Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="05a79f06cf3f67f726dae68d18a2290f6c9a50c9" resname=":">
+        <source>:</source>
+        <target> :</target>
+        <note>key: :</note>
+        <jms:reference-file line="15">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="18">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="21">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="27">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c887b9d3b3905e1e3eb236a1e334ca966299726f" resname="About Us">
+        <source>About Us</source>
+        <target>À propos</target>
+        <note>key: About Us</note>
+        <jms:reference-file line="66">/../../../../../../templates/main_layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcb80b40920ac79b01381b7278cd122f3e92d8d5" resname="All Rides">
+        <source>All Rides</source>
+        <target>Tous les parcours</target>
+        <note>key: All Rides</note>
+        <jms:reference-file line="67">/../../../../../../templates/main_layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16a9c9e05b8b791fc14acebeded76cae59f11284" resname="All fields are required">
+        <source>All fields are required</source>
+        <target>Tous les champs sont requis</target>
+        <note>key: All fields are required</note>
+        <jms:reference-file line="15">/../../../../../../templates/themes/standard/user/registration_form.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67e573713ceac38032bc272219bdccb8887c437f" resname="Alt lang">
+        <source>Alt lang</source>
+        <target>English version</target>
+        <note>key: Alt lang</note>
+        <jms:reference-file line="40">/../../../../../../templates/themes/juan_ride/head.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5fda23d62015b99fb2a9f86b38bcdf2bdf7609c8" resname="Author">
+        <source>Author</source>
+        <target>Auteur</target>
+        <note>key: Author</note>
+        <jms:reference-file line="21">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../../../../../../templates/themes/standard/full/ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+        <note>key: Description</note>
+        <jms:reference-file line="39">/../../../../../../templates/themes/standard/full/ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7945d3c8f7a0dee336a362c9363f597c152ecbe7" resname="Difficulty">
+        <source>Difficulty</source>
+        <target>Difficulté</target>
+        <note>key: Difficulty</note>
+        <jms:reference-file line="18">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="53">/../../../../../../templates/themes/standard/full/ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="07f1a6f0d55339bbeb7640b636e8ee5e0eb17080" resname="Discover new rides! Go Bike!">
+        <source>Discover new rides! Go Bike!</source>
+        <target>Découvrez de nouveaux parcours! Go Bike!</target>
+        <note>key: Discover new rides! Go Bike!</note>
+        <jms:reference-file line="39">/../../../../../../templates/main_layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="423208095dd7fc394399b8c356f8f00cd260869b" resname="Distance">
+        <source>Distance</source>
+        <target>Distance</target>
+        <note>key: Distance</note>
+        <jms:reference-file line="15">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="11">/../../../../../../templates/themes/standard/full/home_page.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6129fe383a2b4aedcd1ba54a31109fe300508e11" resname="Ending Point">
+        <source>Ending Point</source>
+        <target>Point d'arrivée</target>
+        <note>key: Ending Point</note>
+        <jms:reference-file line="35">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="24">/../../../../../../templates/themes/standard/full/ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="03688ba6aa340b87549088aa5739944cb6b1dc73" resname="FAQ">
+        <source>FAQ</source>
+        <target>FAQ</target>
+        <note>key: FAQ</note>
+        <jms:reference-file line="70">/../../../../../../templates/main_layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5423dc0461a9943787214fbb518e31d8e7c2a96" resname="Find a ride">
+        <source>Find a ride</source>
+        <target>Trouver un parcours</target>
+        <note>key: Find a ride</note>
+        <jms:reference-file line="9">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3f66052a107eaf9bae7cad0f61fb462f47ec2c47" resname="From">
+        <source>From</source>
+        <target>De</target>
+        <note>key: From</note>
+        <jms:reference-file line="9">/../../../../../../templates/themes/standard/full/home_page.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="626b6c1d454d11a862220dbe8b7b34d0bcd6de9d" resname="Landmarks">
+        <source>Landmarks</source>
+        <target>Points d'intérêt</target>
+        <note>key: Landmarks</note>
+        <jms:reference-file line="63">/../../../../../../templates/themes/standard/full/ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7c400ed695f898b8ee9d21664aa17b5bb693828" resname="Log in">
+        <source>Log in</source>
+        <target>Se brancher</target>
+        <note>key: Log in</note>
+        <jms:reference-file line="20">/../../../../../../templates/themes/standard/user/registration_confirmation.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a7d9028837130ff720a0d1869be6ed64bbd459a2" resname="Member Registration">
+        <source>Member Registration</source>
+        <target>Inscription d'un membre</target>
+        <note>key: Member Registration</note>
+        <jms:reference-file line="14">/../../../../../../templates/themes/standard/user/registration_form.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b51b2b0d62c7e20b8d8a956fed9a940fed0677d6" resname="My Account">
+        <source>My Account</source>
+        <target>Mon compte</target>
+        <note>key: My Account</note>
+        <jms:reference-file line="69">/../../../../../../templates/main_layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d254d792a3e5e25c31f78c166278d2b99d9c3bba" resname="Nb results">
+        <source>Nb results</source>
+        <target>Nb résultats</target>
+        <note>key: Nb results</note>
+        <jms:reference-file line="27">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e47b85d4b03e8e9c20ef7cd2c5206c93da7d36c1" resname="No pagination necessary!">
+        <source>No pagination necessary!</source>
+        <target>Pas besoin de pagination!</target>
+        <note>key: No pagination necessary!</note>
+        <jms:reference-file line="31">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d764166894f858d4a86434d9a01cb9d6d063674" resname="No results were found for: ">
+        <source>No results were found for: </source>
+        <target>Aucun résultat trouvé pour : </target>
+        <note>key: No results were found for: </note>
+        <jms:reference-file line="38">/../../../../../../templates/themes/bike_ride/paginated_search.html.twig</jms:reference-file>
+        <jms:reference-file line="38">/../../../../../../templates/themes/bike_ride/search.html.twig</jms:reference-file>
+        <jms:reference-file line="24">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="05a30ff46c61e04bf0a15b73f6e7067545a0dd96" resname="Register user">
+        <source>Register user</source>
+        <target>Inscrire utilisateur</target>
+        <note>key: Register user</note>
+        <jms:reference-file line="4">/../../../../../../templates/themes/standard/user/registration_form.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="60e77c63de022b85d74ae74ae925be1f1aa84c76" resname="Registration complete">
+        <source>Registration complete</source>
+        <target>Inscription complète</target>
+        <note>key: Registration complete</note>
+        <jms:reference-file line="4">/../../../../../../templates/themes/standard/user/registration_confirmation.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="917425648720133582bc121f3b1b6c905d3eb75d" resname="Registration completed">
+        <source>Registration completed</source>
+        <target>Inscription complétée</target>
+        <note>key: Registration completed</note>
+        <jms:reference-file line="12">/../../../../../../templates/themes/standard/user/registration_confirmation.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09b04fb249a79f0707753e11b7f516f5c4753e61" resname="Ride">
+        <source>Ride</source>
+        <target>Parcours</target>
+        <note>key: Ride</note>
+        <jms:reference-file line="8">/../../../../../../templates/themes/standard/full/home_page.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
+        <source>Search</source>
+        <target>Chercher</target>
+        <note>key: Search</note>
+        <jms:reference-file line="11">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd5378dfded8722420c9b96309c8ec11e82e3d01" resname="Search for ">
+        <source>Search for </source>
+        <target>Chercher pour </target>
+        <note>key: Search for </note>
+        <jms:reference-file line="3">/../../../../../../templates/themes/juan_ride/paginated_search.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2e5fd8d9c5b52839bddc743b5161f9c7fd807f27" resname="Starting Point">
+        <source>Starting Point</source>
+        <target>Point de départ</target>
+        <note>key: Starting Point</note>
+        <jms:reference-file line="31">/../../../../../../templates/themes/juan_ride/full/bike_ride.html.twig</jms:reference-file>
+        <jms:reference-file line="20">/../../../../../../templates/themes/standard/full/ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd4a7bb956ec5e0e600483c0fdea3de00ad1afad" resname="Submit a Ride">
+        <source>Submit a Ride</source>
+        <target>Proposer un parcours</target>
+        <note>key: Submit a Ride</note>
+        <jms:reference-file line="68">/../../../../../../templates/main_layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae79ea1e9c6391a9ed83a2e18a031b835feec0c9" resname="To">
+        <source>To</source>
+        <target>Vers</target>
+        <note>key: To</note>
+        <jms:reference-file line="10">/../../../../../../templates/themes/standard/full/home_page.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69bd4ef9fbd0894a22759c3766b859defbdedbc8" resname="View">
+        <source>View</source>
+        <target>Voir</target>
+        <note>key: View</note>
+        <jms:reference-file line="21">/../../../../../../templates/themes/juan_ride/line/bike_ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57908139502c8ec19e751f3a1b57deb97b56aefe" resname="You are all set up and ready to go">
+        <source>You are all set up and ready to go</source>
+        <target>Vous êtes prêt pour partir</target>
+        <note>key: You are all set up and ready to go</note>
+        <jms:reference-file line="15">/../../../../../../templates/themes/standard/user/registration_confirmation.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d97acdc3f1e0787253558c4c8a1006ac494e7d7" resname="landmark(s)">
+        <source>landmark(s)</source>
+        <target>point(s) d'intérêt</target>
+        <note>key: landmark(s)</note>
+        <jms:reference-file line="18">/../../../../../../templates/themes/juan_ride/line/bike_ride.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="825f9d0121991ee3f91e48af0481519ec51e5449" resname="© GoBike 2021 - All rights reserved">
+        <source>© GoBike 2021 - All rights reserved</source>
+        <target>© GoBike 2021 - Tous droits réservés</target>
+        <note>key: © GoBike 2021 - All rights reserved</note>
+        <jms:reference-file line="32">/../../../../../../templates/themes/juan_ride/pagelayout.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

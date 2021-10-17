@@ -1,0 +1,35 @@
+{% extends "@ezdesign/pagelayout.html.twig" %}
+
+{% set page_title = ('Search for ' | trans) ~ search_text %}
+
+{% block content %}
+
+    <div>
+        <form action="{{ path('gobike_search') }}" method="get">
+            <label for="q">{{ 'Find a ride' | trans }}</label>
+            <input type="text" class="form-control" id="q" name="q" value="{{ search_text }}">
+            <button class="btn btn-default" type="submit"/>{{ 'Search' | trans }}</button>
+        </form>
+    </div>
+
+    <section>
+        <div>
+            {% if totalItemCount %}
+                <div>
+                    {% for bike_ride in bike_rides %}
+                        {% include '@ezdesign/line/bike_ride.html.twig' with {content: bike_ride.valueObject} %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <strong>{{ 'No results were found for: '|trans }}{{ search_text }}</strong>
+            {% endif %}
+
+            <p>{{ 'Nb results' | trans }}{{ ':' | trans }} {{ totalItemCount }}</p>
+            {% if bike_rides.haveToPaginate() %}
+                {{ pagerfanta( bike_rides, 'ez') }}
+            {% else %}
+                <p>{{ 'No pagination necessary!' | trans }}</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,8 +1,11 @@
-{% if (content.prioritizedFieldLanguageCode starts with 'eng') %}
-    {% set alt_url = ez_path(content, {'siteaccess': 'bikeride_fr'}) %}
-{% else  %}
-    {% set alt_url = ez_path(content, {'siteaccess': 'bikeride_en'}) %}
-{%  endif %}
+{%  set siteaccess =app.request.get('siteaccess').name %}
+{{ dump() }}
+
+{%  if (content is defined) %}
+    {% set alt_url = ez_path(content, {'siteaccess': siteaccess}) %}
+{%  else %}
+    {% set alt_url = '#no-content' %}
+{% endif %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -26,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Search</a>
+                    <a class="nav-link" href="/en/bikesearchp">Search</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Suggestion</a>
