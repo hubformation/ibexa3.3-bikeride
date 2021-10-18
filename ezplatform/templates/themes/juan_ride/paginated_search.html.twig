@@ -5,7 +5,7 @@
 {% block content %}
 
     <div>
-        <form action="{{ path('gobike_search') }}" method="get">
+        <form action="{{ path('gobike_search_paginated') }}" method="get">
             <label for="q">{{ 'Find a ride' | trans }}</label>
             <input type="text" class="form-control" id="q" name="q" value="{{ search_text }}">
             <button class="btn btn-default" type="submit"/>{{ 'Search' | trans }}</button>
