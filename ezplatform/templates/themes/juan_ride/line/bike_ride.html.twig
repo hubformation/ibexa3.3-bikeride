@@ -1,10 +1,9 @@
 {%  set landmarks = ez_field_value(content,'landmarks') %}
 {% set nbLandmarks= landmarks.destinationContentIds|length %}
-
-<div class="card box-shadow col-3 p-4 m-4" >
+<div class="col-sm-6 col-md-4 p-4">
+<div class="card h-100" >
     {{ ez_render_field(content, 'photo') }}
     <div class="card-body">
-
         <h2 class="card-title fs-5 mb-2  mt-0"><a href="{{ path( "ez_urlalias", {"contentId": content.id} ) }} "  target="_self">{{ ez_render_field(content, 'name') }}</a></h2>
 
         <div class="d-flex align-items-center justify-content-between text-uppercase text-muted">
@@ -18,8 +17,9 @@
                 {{ nbLandmarks }} {{ 'landmark(s)'|trans }}</div>
         {% endif %}
 
-        <div class="d-grid gap-2 col mx-auto mt-3"><a href="{{ path( "ez_urlalias", {"contentId": content.id} ) }} " class="btn bg-success text-white" target="_self">{{ 'View'|trans }}</a></div>
+        <div class="btn-flex-t-auto"><a href="{{ path( "ez_urlalias", {"contentId": content.id} ) }} " class="btn bg-success text-white" target="_self">{{ 'View'|trans }}</a></div>
 
     </div>
+</div>
 </div>
 

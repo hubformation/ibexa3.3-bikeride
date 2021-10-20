@@ -59,3 +59,34 @@ img{
   text-transform: uppercase;
   font-weight: bold;
 }
+#search{
+  .input-group{
+    display:flex;
+    flex-wrap: nowrap;
+  }
+}
+.list-group{
+  border-radius: 0;
+  box-shadow: none;
+}
+.card{
+  figure{
+    height: 200px;
+    overflow: hidden;
+    img{
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+
+ .btn-flex-t-auto {
+    margin-top: auto;
+   width: 100%;
+   padding-top: 1.5rem;
+   a{display:block;}
+  }
+}

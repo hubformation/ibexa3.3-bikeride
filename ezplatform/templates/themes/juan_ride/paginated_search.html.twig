@@ -3,33 +3,42 @@
 {% set page_title = ('Search for ' | trans) ~ search_text %}
 
 {% block content %}
-
-    <div>
-        <form action="{{ path('gobike_search_paginated') }}" method="get">
-            <label for="q">{{ 'Find a ride' | trans }}</label>
-            <input type="text" class="form-control" id="q" name="q" value="{{ search_text }}">
-            <button class="btn btn-default" type="submit"/>{{ 'Search' | trans }}</button>
-        </form>
+    <div class="row gx-5 ">
+        <div class="col">
+        <h1>{{ 'Search' | trans }}</h1>
+            <form action="{{ path('gobike_search_paginated') }}" method="get" id="search">
+                <div class="col-auto">
+                <label for="q">{{ 'Find a ride' | trans }}</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="q" name="q" value="{{ search_text }}">
+                    <button class="btn bg-success text-white" type="submit"/>{{ 'Search' | trans }}</button>
+                </div>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <section>
-        <div>
+    <section class="row gx-5 ">
+
             {% if totalItemCount %}
-                <div>
+                <div class="row gx-5 ">
                     {% for bike_ride in bike_rides %}
                         {% include '@ezdesign/line/bike_ride.html.twig' with {content: bike_ride.valueObject} %}
                     {% endfor %}
                 </div>
             {% else %}
-                <strong>{{ 'No results were found for: '|trans }}{{ search_text }}</strong>
+                <div class="text-danger my-2"><strong>{{ 'No results were found for: '|trans }}{{ search_text }}</strong></div>
             {% endif %}
-
-            <p>{{ 'Nb results' | trans }}{{ ':' | trans }} {{ totalItemCount }}</p>
+        <div class="row gx-5 ">
+            <div class="col">
+            <p class="text-success text-uppercase">{{ 'Nb results' | trans }}{{ ':' | trans }} {{ totalItemCount }}</p>
             {% if bike_rides.haveToPaginate() %}
                 {{ pagerfanta( bike_rides, 'ez') }}
             {% else %}
-                <p>{{ 'No pagination necessary!' | trans }}</p>
+                <p class="text-success text-uppercase">{{ 'No pagination necessary!' | trans }}</p>
             {% endif %}
+            </div>
         </div>
+
     </section>
 {% endblock %}
