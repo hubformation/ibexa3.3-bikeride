@@ -1,0 +1,12 @@
+#ddev-generated
+db_import_command:
+  command: |
+    set -eu -o pipefail
+    gzip -dc data/ezplatforn.sql.gz | ddev mysql db
+  service: host
+
+files_import_command:
+  command: |
+    set -eu -o pipefail
+    tar -zxf data/storage.tar.gz -C ezplatform/public
+  service: host
