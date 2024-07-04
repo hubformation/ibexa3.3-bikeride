@@ -61,7 +61,13 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "ibexa/post-install": true,
+            "symfony/flex": true,
+            "symfony/thanks": true,
+            "symfony/runtime": true
+        }
     },
     "autoload": {
         "psr-4": {
@@ -99,8 +105,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "5.3.*",
-            "endpoint": "https://flex.ibexa.co"
+            "require": "5.3.*"
         }
     }
 }
