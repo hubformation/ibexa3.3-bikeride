@@ -2,7 +2,7 @@
 db_import_command:
   command: |
     set -eu -o pipefail
-    gzip -dc data/ezplatforn.sql.gz | ddev mysql db
+    gzip -dc data/ezplatform.sql.gz | ddev mysql db
   service: host
 
 files_import_command:
