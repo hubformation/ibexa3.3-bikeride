@@ -1,0 +1,38 @@
+# Please do `ddev mutagen reset` after changing the file.
+# See DDEV Mutagen docs at
+# https://ddev.readthedocs.io/en/stable/users/install/performance/#mutagen
+# For detailed information about mutagen configuration options, see
+# https://mutagen.io/documentation/introduction/configuration
+sync:
+  defaults:
+    mode: "two-way-resolved"
+    stageMode: "neighboring"
+    ignore:
+      paths:
+        - "/.git"
+        - "/.tarballs"
+        - "/.ddev/db_snapshots"
+        - "/.ddev/.importdb*"
+        - ".DS_Store"
+        - ".idea"
+        - "*"
+        - "!/ezplatform/"
+        - "/ezplatform/*"
+        - "!/ezplatform/cache/"
+        - "!/ezplatform/cache/**"
+        - "!/ezplatform/vendor/"
+        - "!/ezplatform/vendor/**"
+        - "!/ezplatform/node_modules/"
+        - "!/ezplatform/node_modules/**"
+        - "!/ezplatform/public/"
+        - "!/ezplatform/public/**"
+
+        # You can also exclude other directories from mutagen-syncing
+        # For example /var/www/html/var does not need to sync in TYPO3
+        # so you can add:
+        # - "/var"
+        # vcs like .git can be ignored for safety, but then some
+        # composer operations may fail if they use dev versions/git.
+        # vcs: true
+    symlink:
+      mode: "posix-raw"

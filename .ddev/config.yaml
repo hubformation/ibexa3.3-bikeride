@@ -9,6 +9,10 @@ additional_fqdns: []
 database:
     type: mariadb
     version: "10.11"
+performance_mode: mutagen
+hooks:
+    post-start:
+        - composer: install
 working_dir:
     web: ezplatform
 use_dns_when_possible: true
@@ -24,9 +28,10 @@ web_environment:
     - DATABASE_PASSWORD=db
     - DATABASE_HOST=db
     - SEARCH_ENGINE=solr
-    - 'SOLR_DSN=http://solr:8983/solr'
+    - SOLR_DSN=http://solr:8983/solr
 nodejs_version: "16"
 corepack_enable: false
+disable_upload_dirs_warning: true
 
 # Key features of DDEV's config.yaml:
 
