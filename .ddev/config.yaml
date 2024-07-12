@@ -27,8 +27,6 @@ web_environment:
     - DATABASE_NAME=db
     - DATABASE_PASSWORD=db
     - DATABASE_HOST=db
-    - SEARCH_ENGINE=solr
-    - SOLR_DSN=http://solr:8983/solr
 nodejs_version: "10"
 corepack_enable: false
 disable_upload_dirs_warning: true
