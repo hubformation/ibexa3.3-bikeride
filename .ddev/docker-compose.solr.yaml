@@ -1,52 +1,33 @@
 #ddev-generated
-
+version: '3.6'
 services:
   solr:
-    build: ./solr
     container_name: ddev-${DDEV_SITENAME}-solr
-    expose:
-      - 8983
+    image: bitnami/solr:8
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
-      com.ddev.approot: ${DDEV_APPROOT}
+      com.ddev.approot: $DDEV_APPROOT
     environment:
-      SOLR_HOST: ddev-${DDEV_SITENAME}-solr
-      SOLR_PORT: 8983
-      # The pre-trained OpenNLP models require a much bigger buffer.
-      SOLR_OPTS: -Djute.maxbuffer=50000000
-      #SOLR_HEAP: 1g
-      SOLR_AUTH_TYPE: basic
-      SOLR_AUTHENTICATION_OPTS: -Dbasicauth=solr:SolrRocks
-      VIRTUAL_HOST: ${DDEV_HOSTNAME}
-      HTTP_EXPOSE: 8983:8983
-      HTTPS_EXPOSE: 8943:8983
+      # This defines the host name the service should be accessible from. This
+      # will be sitename.ddev.site.
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      # HTTP_EXPOSE exposes http traffic from the container port 8983
+      # to the host port 8983 vid ddev-router reverse proxy.
+      - HTTP_EXPOSE=8983:8983
+      # Bitnami Image specifics
+      - SOLR_CORES=collection1
+      - SOLR_CORE_CONF_DIR=/mnt/ddev_config/solrconfigs
     volumes:
-      - .:/mnt/ddev_config
-      - ./solr/lib:/opt/solr/modules/ddev/lib
-      - solr:/var/solr
-    command: bash -c "set -eu;
-      docker-entrypoint.sh solr start -c -Dlog4j.configurationFile=/opt/solr/server/resources/log4j2-console.xml;
-      solr zk cp file:/mnt/ddev_config/solr/security.json zk:/security.json -z localhost:9983;
-      cd /mnt/ddev_config/solr/configsets;
-      for dir in */; do
-        dir=$${dir%/};
-        if [[ \"$$dir\" != \"*\" ]]; then
-          echo \"uploading configset $$dir\";
-          solr zk upconfig -n \"$$dir\" -d \"$$dir\" -z localhost:9983;
-          echo \"creating collection $$dir\";
-          solr create -c \"$$dir\" -n \"$$dir\" -shards 1 -replicationFactor 1 || true;
-        fi;
-      done;
-      cd -;
-      solr stop > /dev/null;
-      exec solr-foreground -c -Dlog4j.configurationFile=/opt/solr/server/resources/log4j2.xml;
-      "
-    healthcheck:
-      test: ["CMD-SHELL", "curl --fail -s localhost:8983/solr/"]
+      # solr core *data* is stored on the 'solr_data' docker volume
+      # This mount is optional; without it your search index disappears
+      # each time the ddev project is stopped and started.
+      - solr_data:/bitnami
 
-  web:
-    links:
-      - solr:solr
+      - ".:/mnt/ddev_config"
+    healthcheck:
+      timeout: 30s
 
 volumes:
-  solr:
+  # solr_data is a persistent Docker volume for solr data
+  solr_data:
+    name: "ddev-${DDEV_SITENAME}_solr"

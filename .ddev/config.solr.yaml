@@ -1,0 +1,15 @@
+#ddev-generated
+web_environment:
+- SEARCH_ENGINE=solr
+- SOLR_CORE=collection1
+- SOLR_DSN=http://solr:8983/solr
+
+hooks:
+  post-start:
+    - exec: >
+        until $(curl --output /dev/null --silent --head --fail http://solr:8983/api/); do
+          echo "Waiting for Solr to start...";
+          sleep 10;
+        done;
+        echo "Solr has started. Proceeding with reindex.";
+        php bin/console ibexa:reindex

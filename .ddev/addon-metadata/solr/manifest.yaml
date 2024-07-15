@@ -1,10 +1,10 @@
 name: solr
-repository: ddev/ddev-solr
-version: 0.5.0
-install_date: "2024-07-03T12:55:40-04:00"
+repository: ibexa/ddev-solr
+version: v1.0.0
+install_date: "2024-07-15T12:42:52-04:00"
 project_files:
-    - commands/solr/
     - docker-compose.solr.yaml
-    - solr/
+    - config.solr.yaml
+    - solrconfigs/
 global_files: []
 removal_actions: []
