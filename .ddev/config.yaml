@@ -7,7 +7,7 @@ xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 upload_dirs:
-    - var/storage
+    - var/site/storage
 database:
     type: mariadb
     version: "10.11"
