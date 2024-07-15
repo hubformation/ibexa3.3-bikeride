@@ -6,6 +6,8 @@ webserver_type: nginx-fpm
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
+upload_dirs:
+    - var/storage
 database:
     type: mariadb
     version: "10.11"
